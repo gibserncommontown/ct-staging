@@ -1,0 +1,29 @@
+name: Deployment
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: macOS
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Remove socks
+      run: ./.github/scripts/remove.sock.sh
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Packages
+      run: npm install
+    - name: Install Gatsby-cli
+      run: npm list | grep gatsby-cli || npm install -g gatsby-cli
+    - name: Build page
+      run: gatsby build --prefix-paths
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.CT_CORP_ACTION_KEY }}
