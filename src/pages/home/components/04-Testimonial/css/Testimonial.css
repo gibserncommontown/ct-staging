@@ -1,0 +1,226 @@
+.making-our-mark {
+  background-color: #5d9dc4;
+  background-image: linear-gradient(#b5d6e8, #8dbcd7, #3d89b7);
+  flex-direction: column;
+}
+
+.making-our-mark h2 {
+  margin-bottom: 0;
+  text-shadow: none;
+}
+
+.making-our-mark .outer-container {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 60px;
+}
+
+.making-our-mark .outer-container:before {
+  content: url("../images/blob3.png");
+  position: absolute;
+  bottom: 0;
+  right: calc(50% + 50px);
+}
+
+.making-our-mark .outer-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.making-our-mark .container {
+  position: relative;
+}
+
+.making-our-mark-blob {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.scoreBlock {
+  display: table;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin: 0 0 calc(1.3542vw + 24px);
+  font-size: 1rem;
+  color: white;
+}
+
+.scoreBlock .score {
+  font-size: calc(2.5vw + 32px);
+  line-height: 1.2;
+}
+
+.scoreBlock .text {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 991px) {
+  .scoreBlock {
+    width: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .scoreBlock {
+    width: 100%;
+  }
+}
+
+.testmonialContainer {
+  position: relative;
+  padding-top: 20px;
+  padding-left: 92px;
+  margin-top: 50px;
+}
+
+.testmonialContainer img.testimonial-quote {
+  position: absolute;
+  top: 75px;
+  left: 0;
+}
+
+@media (min-width: 768px) {
+  .testmonialContainer {
+    width: 60%;
+    float: right;
+  }
+  .testmonialContainer h2 {
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .testmonialContainer {
+    width: 50.6667%;
+  }
+}
+
+.testmonialContainer .testimonialBlock {
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.75;
+  padding-top: 78px;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.testmonialContainer .testimonialBlock .description {
+  margin-bottom: 1em;
+}
+
+.testmonialContainer .testimonialBlock .description,
+.testmonialContainer .testimonialBlock .author {
+  position: relative;
+  z-index: 1;
+}
+
+.testmonialContainer .slick-active .testimonialBlock {
+  opacity: 1;
+}
+
+.testmonialContainer .slick-dots {
+  margin: 28px 0;
+  bottom: 0;
+  position: relative;
+}
+
+.testmonialContainer .slick-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: white;
+  transition: background 0.3s;
+}
+
+.testmonialContainer .slick-dots button:before {
+  display: none;
+}
+
+.testmonialContainer .slick-dots .slick-active > button {
+  background: #023c61;
+}
+
+@media (min-width: 992px) {
+  .testmonialContainer .slick-dots button:hover {
+    background: #023c61;
+  }
+}
+
+.testmonialContainer .testimonialBlock:focus,
+.testmonialContainer .slick-slide > div:focus {
+  outline: none !important;
+  outline: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .making-our-mark,
+  .testmonialContainer {
+    padding-left: 50px;
+  }
+  .making-our-mark:before,
+  .testmonialContainer:before {
+    padding-bottom: 48%;
+  }
+  .making-our-mark h2,
+  .testmonialContainer h2 {
+    margin-bottom: 1em;
+  }
+  .making-our-mark .testimonialBlock,
+  .testmonialContainer .testimonialBlock {
+    padding-top: 50px;
+  }
+  .making-our-mark .container {
+    background-image: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .making-our-mark .outer-container {
+    padding-bottom: calc(80px - 1.625em);
+  }
+  .making-our-mark .outer-container:before {
+    content: "";
+  }
+  .testimonialBlock::before {
+    opacity: 0.6 !important;
+  }
+  .testimonialSlider {
+    padding-left: 0;
+    background-image: none;
+  }
+}
+
+.testimonial-cta {
+  display: flex;
+  margin: 0 -5px;
+  width: calc(100% + 5px);
+}
+
+.testimonial-cta > * {
+  margin: 5px;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 540px) {
+  .making-our-mark.section,
+  .testmonialContainer {
+    padding-left: 0;
+  }
+  .making-our-mark h2 {
+    text-align: center;
+  }
+  .testimonial-cta {
+    flex-direction: column;
+  }
+}

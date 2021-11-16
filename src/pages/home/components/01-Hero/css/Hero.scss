@@ -1,0 +1,151 @@
+.hero-banner {
+  position: relative;
+  z-index: 2;
+}
+
+.heroArea {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  height: 100vh;
+  display: block;
+  background-color: rgb(2, 60, 97);
+  background-image: linear-gradient(#01619e, #95bbcf);
+
+  .outer-container {
+    height: 100%;
+    background-image: url("../images/girl.png");
+    background-position: left bottom;
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: url("../images/blob1.png");
+      position: absolute;
+      right: -40px;
+      top: -100px;
+      display: block;
+    }
+
+    @media (max-width: 1500px) {
+      max-width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  .hero-space-shell {
+    height: 100%;
+  }
+
+  .hero-circle-wrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    .container {
+      overflow: hidden;
+      background-color: transparent;
+      background-image: url("../images/circle.png");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 1.625em) center;
+      background-size: auto 100%;
+      height: 70px;
+      width: 100%;
+      transform: translate(50px, 50%);
+      @media (max-width: 1500px) {
+        transform: translate(0px, 50%);
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .hero-intro {
+    color: white;
+    width: 500px;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+    line-height: 1.2;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    text-shadow: 0px 3px 5px rgba(0, 39, 63, 0.75);
+    margin-bottom: 0.4em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    text-shadow: 0px 3px 5px rgba(0, 39, 63, 0.75);
+    margin-bottom: 0.4em;
+  }
+
+  .hero-description {
+    font-size: 1.3125rem;
+    line-height: 1.714;
+    text-shadow: 0px 3px 5px rgba(64, 112, 141, 0.75);
+  }
+}
+
+.hero-mushroomArt {
+  max-width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50px);
+}
+
+@media (max-width: 991px) {
+  .heroArea {
+    .hero-intro {
+      width: 100%;
+    }
+  }
+}
+
+.heroGraph {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  opacity: 0.35;
+}
+
+@media (max-width: 767px) {
+  .hero-intro{
+    margin-top: -30px;
+  }
+
+  .heroArea .outer-container{
+    background-size: 80% auto;
+  }
+
+  .hero-circle-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroArea .hero-title {
+    font-size: 2rem;
+  }
+}

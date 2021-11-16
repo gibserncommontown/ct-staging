@@ -1,0 +1,59 @@
+.news .content, .news.contentArea {
+  padding-bottom: 0;
+}
+
+.news .article-area {
+  padding-bottom: 50px;
+}
+
+.news .news-description {
+  padding-bottom: 0px;
+}
+
+.news .tabContent {
+  padding-bottom: calc(50px + 1.8vw + 1.625rem);
+  position: relative;
+}
+
+.news .tabContent:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(#f5fcff, #d5e4ec);
+  height: 100%;
+  width: 100vw;
+}
+
+.news img {
+  width: auto !important;
+  height: auto !important;
+  display: block;
+}
+
+.news .ive_eobj_center {
+  margin: auto;
+  display: block;
+}
+
+.news th,
+.news td {
+  vertical-align: top;
+  width: 50% !important;
+}
+
+.news th img.ive_eobj_left + br,
+.news td img.ive_eobj_left + br {
+  display: none;
+}
+
+.news th br + br,
+.news td br + br {
+  display: none;
+}
+
+.news .tabContent .tabContent-thumbnail:before {
+  padding-bottom: 78.9473%;
+}

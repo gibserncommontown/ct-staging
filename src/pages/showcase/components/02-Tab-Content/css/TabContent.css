@@ -1,0 +1,114 @@
+.tabContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tabContent *[style*="background"] {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.tabContent > * {
+  position: relative;
+  width: calc(33.3333% - 20px);
+  flex: 0 1 auto;
+  margin-bottom: 50px;
+}
+
+.tabContent .tabContent-thumbnail {
+  position: relative;
+}
+
+.tabContent .tabContent-thumbnail:before {
+  content: "";
+  display: block;
+  padding-bottom: 56%;
+}
+
+.tabContent .tabContent-tag {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+  padding: 0.5em;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.tabContent .tabContent-tag.swiiit {
+  background: #e66657;
+}
+
+.tabContent .tabContent-tag.common-academy, .tabContent .tabContent-tag.commonacademy {
+  background: #f9af52;
+}
+
+.tabContent .tabContent-tag.qoqolo {
+  background: #46aed0;
+}
+
+.tabContent .tabContent-name {
+  font-size: 1.125rem;
+  min-height: 80px;
+  color: #013556;
+  background: white;
+  text-align: center;
+  padding: 1em;
+  border-bottom: 1px solid #013556;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabContent .tabContent-description {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tabContent .tabContent-color-layer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  padding: 1.5em;
+  background: rgba(249, 175, 82, 0.9);
+}
+
+@media (min-width: 992px) {
+  .tabContent > *:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+  .tabContent-thumbnail {
+    box-shadow: 0 0 0 0px #fff;
+    transition: all 0.3s;
+  }
+  .tabContent > *:hover .tabContent-thumbnail {
+    box-shadow: 0 0 10px 0px #ffb400;
+  }
+}
+
+@media (max-width: 991px) {
+  .tabContent > * {
+    width: calc(50% - 15px);
+  }
+  .tabContent > *:not(:nth-child(2n)) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabContent > * {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+.tabContent > *:last-child {
+  margin-right: 0px;
+}

@@ -1,0 +1,24 @@
+.button-animate-1 {
+  animation: glowing 1500ms infinite;
+}
+
+@media (max-width: 767px) {
+  .button-animate-1:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #002a45;
+    box-shadow: 0 0 3px #002a45;
+  }
+  50% {
+    background-color: rgba(2, 60, 97, 0.9);
+    box-shadow: 0 0 8px rgba(2, 60, 97, 0.9);
+  }
+  100% {
+    background-color: #002a45;
+    box-shadow: 0 0 3px #002a45;
+  }
+}

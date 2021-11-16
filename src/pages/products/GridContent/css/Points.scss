@@ -1,0 +1,18 @@
+.points {
+  padding: 0;
+  .point {
+    display: flex;
+    align-items: center;
+    .iconArea {
+      margin-right: 38px;
+      width: 160px;
+      flex: 0 0 auto;
+      text-align: center;
+      line-height: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}

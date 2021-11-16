@@ -1,0 +1,124 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  a {
+    font-size: 1rem;
+    padding: 0.625em 1.6875em;
+    border-bottom: 1px solid #000;
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 3px;
+      display: block;
+      position: absolute;
+      top: calc(100% - 1px);
+      left: 0;
+      background: transparent;
+      transition: all 0.3s;
+    }
+  }
+
+  a.active:before {
+    background: #ffb400;
+  }
+}
+
+@media (min-width: 768px) {
+  .tab-Wrapper .label {
+    display: none;
+  }
+  .tabs a:hover:before {
+    background: #ffb400;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-Wrapper {
+    display: flex;
+    align-items: flex-start;
+    overflow: visible;
+    height: 48px;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+
+    .label {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .tabs {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      box-shadow: 0 0 2px 0 rgba(#000, 0.1);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: white;
+      overflow: hidden;
+
+      margin-top: 0px;
+      max-height: 48px;
+      transition: all 0.3s;
+      z-index: 2;
+
+      &:before {
+        content: "";
+        border: 5px solid transparent;
+        border-bottom-width: 0;
+        border-top-color: #000;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 22.5px;
+        right: 17.5px;
+
+        z-index: 1;
+      }
+
+      &.focus {
+        margin-top: -10px;
+        max-height: 250px;
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    a.active,
+    a {
+      border-bottom: 0;
+    }
+
+    a.active:before {
+      display: none;
+    }
+
+    a {
+      width: 100%;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      padding-right: 40px;
+    }
+
+    .tabs a.active {
+      order: -1;
+    }
+
+    .tabs.focus a.active,
+    .tabs.focus a:hover {
+      color: #ffb400;
+    }
+  }
+}

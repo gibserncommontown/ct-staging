@@ -1,0 +1,29 @@
+.breadcrumbs_ {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.breadcrumbs_ a:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 0.75rem;
+  width: 1px;
+  background: #023c61;
+  border: 1px solid #e9ebee;
+  border-top: 0;
+  border-bottom: 0;
+  margin: auto 4px;
+}
+
+.breadcrumbs_ a {
+  font-size: 0.875rem;
+  color: #023c61;
+  line-height: 1.714;
+}
+
+.breadcrumbs_ a:last-child {
+  color: #ffb400;
+}

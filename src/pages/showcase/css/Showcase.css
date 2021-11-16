@@ -1,0 +1,20 @@
+.showcase .content, .showcase.contentArea {
+  padding-bottom: 0;
+}
+
+.showcase.contentArea .tabContent {
+  padding-bottom: calc(50px + 1.8vw + 1.625rem);
+  position: relative;
+}
+
+.showcase.contentArea .tabContent:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(#f5fcff, #d5e4ec);
+  height: 100%;
+  width: 100vw;
+}

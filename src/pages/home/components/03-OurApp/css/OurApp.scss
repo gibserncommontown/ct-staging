@@ -1,0 +1,269 @@
+.OurApp {
+  background-color: #bad9ea;
+  background-image: linear-gradient(#649ebe, #b5d6e8);
+  overflow: hidden;
+  padding-top: 0px;
+
+  .outer-container {
+    position: relative;
+    .explore-network {
+      position: absolute;
+      bottom: 0px;
+      left: -340px;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 0;
+    padding-bottom: 190px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: calc(3vw + 50px);
+    color: white;
+  }
+
+  $slider_gutter: 40px;
+  $slider_nav_padding: 50px;
+  $slide_gutter: $slider_gutter/2;
+
+  .OurApp--block {
+    padding: 0 $slider_nav_padding;
+
+    .slick-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background-color: #c3d8e1;
+      background-image: url("../images/angle.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      transition: all 0.3s;
+      &:before {
+        display: none;
+      }
+      &.slick-next {
+        transform: rotate(180deg);
+      }
+
+      @media (min-width: 992px) {
+        &:hover {
+          background-color: #91b4c4;
+        }
+      }
+    }
+
+    .slick-prev {
+      left: -$slider_nav_padding;
+    }
+
+    .slick-next {
+      right: -$slider_nav_padding;
+    }
+  }
+
+  .product-block {
+    padding: 0 $slide_gutter 10px;
+    height: 100%;
+    display: flex !important;
+    flex-direction: column;
+
+    position: relative;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.9em;
+
+    color: #023c61;
+    font-weight: bold;
+  }
+
+  $product_card_padding_side: 40px;
+  $product_card_paddin_tb: 38px;
+  .product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    font-size: 1rem;
+    padding: $product_card_paddin_tb $product_card_padding_side
+      $product_card_paddin_tb;
+    border-radius: 10px;
+    background: white;
+    height: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(206, 216, 222, 0.75);
+
+    position: relative;
+    color: #023c61;
+
+    p {
+      display: block;
+      line-height: 1.5;
+      margin: 0 0 40px;
+      align-self: flex-start;
+    }
+
+    a {
+      flex: 0 0 auto;
+      position: absolute;
+      bottom: $product_card_paddin_tb;
+      left: $product_card_padding_side;
+      top: auto;
+      width: calc(100% - #{$product_card_padding_side * 2});
+      text-align: center;
+
+      color: inherit;
+      transition: all 0.3s;
+
+      @media (min-width: 992px) {
+        &:hover {
+          color: #ffb400;
+        }
+      }
+    }
+  }
+
+  .product-logo {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 207px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+
+    margin-bottom: 70px;
+
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-bottom: 51.2077%;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // Overwrite Slick Carousel
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    // background: red;
+    height: auto;
+    & > div {
+      // background: blue;
+      height: 100%;
+    }
+  }
+
+  .product-block:focus,
+  .slick-slide > div:focus {
+    outline: none !important;
+    outline: 0 !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .OurApp {
+    $slider_gutter: 48px;
+    $slide_gutter: $slider_gutter/2;
+    .OurApp--block {
+      padding: 0 $slider_gutter;
+
+      .slick-prev {
+        left: -$slider_gutter;
+      }
+
+      .slick-next {
+        right: -$slider_gutter;
+      }
+    }
+
+    .product-block {
+      padding: 0 $slide_gutter 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .OurApp .container {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 540px) {
+  .OurApp .product-block {
+    padding-left: 10;
+    padding-right: 10;
+  }
+
+  .OurApp .OurApp--block {
+    padding: 0px;
+    margin-left: -10px;
+    width: calc(100% + 20px);
+  }
+}
+
+.product-action-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-block {
+  $sq: 40px;
+  button {
+    width: $sq;
+    height: $sq;
+    border-radius: $sq;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    transition: all 0.3s;
+    &:hover {
+      background: green;
+    }
+  }
+
+  button:before,
+  button:after {
+    content: "";
+    width: calc(#{$sq} - 15px);
+    height: 2px;
+    display: block;
+    background: white;
+  }
+
+  button:after {
+    margin-top: -2px;
+    transform: rotate(90deg);
+  }
+
+  .product-action-left {
+    left: 2px;
+  }
+  .product-action-right {
+    right: 2px;
+  }
+}

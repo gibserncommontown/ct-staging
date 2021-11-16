@@ -1,0 +1,228 @@
+header {
+  font-family: "Muli", sans-serif;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  z-index: 3;
+}
+
+header:not(.headerOverlay) {
+  background: linear-gradient(#01619e, #2a7aab, #69a1c0);
+}
+
+header.headerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > .container #logo {
+  display: block;
+}
+
+header > .container .header-links {
+  display: flex;
+}
+
+header > .container a:not(#logo) {
+  flex: 0 0 auto;
+  display: block;
+  padding: 1em;
+  transition: all 0.3s;
+}
+
+header > .container .header-link-wrapper {
+  z-index: 1;
+  position: relative;
+}
+
+header > .container .header-link-wrapper:hover > .header-link-dropdown {
+  display: block;
+}
+
+header > .container .header-link-wrapper:hover > a,
+header > .container .header-link-wrapper > a.active {
+  color: #ffb400;
+}
+
+header > .container .header-link-dropdown {
+  display: none;
+  min-width: 170px;
+  overflow: hidden;
+  position: absolute;
+  background: #b5cada;
+  color: #023c61;
+  transition: all 0.3s;
+}
+
+header > .container .header-link-dropdown a:not(#logo) {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+header > .container .header-link-dropdown a:not(#logo):hover,
+header > .container .header-link-dropdown a:not(#logo).active {
+  color: white;
+}
+
+header .link-level-1 {
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  header {
+    min-height: 89.5px;
+    position: relative;
+  }
+  header .header-link-wrapper {
+    order: 2;
+  }
+  #logo {
+    margin: auto;
+    position: relative;
+    z-index: 5;
+  }
+  #logo img {
+    max-height: 40px;
+  }
+  .header-links {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: fixed;
+    top: 1.625em;
+    right: 1.625em;
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    padding-top: 78px !important;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .headerBurger {
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+    right: 1.625em;
+    top: 1.625em;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+  }
+  .headerBurger .line-wrapper {
+    position: relative;
+  }
+  .headerBurger span {
+    background: white;
+    height: 2px;
+    width: 30px;
+    display: block;
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  .headerBurger span:not(:last-child) {
+    margin-bottom: 6px;
+  }
+  .headerBurger span:last-child,
+  .headerBurger span:first-child {
+    width: 23px;
+    transform: rotate(0deg);
+  }
+  .headerBurger span:last-child {
+    float: right;
+  }
+  input:checked + a#logo {
+    position: fixed;
+    top: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  input:checked + a + .headerBurger {
+    position: fixed;
+    transform: rotate(180deg);
+  }
+  input:checked + a + .headerBurger span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+  }
+  input:checked + a + .headerBurger span {
+    margin: 0;
+  }
+  input:checked + a + .headerBurger span:not(:first-child) {
+    position: absolute;
+    top: 0;
+  }
+  input:checked + a + .headerBurger span:first-child {
+    transform: rotate(45deg);
+  }
+  input:checked + a + .headerBurger span:last-child {
+    transform: rotate(-45deg);
+  }
+  input:checked + a + .headerBurger + .header-links {
+    top: 0;
+    right: 0;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.625em;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  header > .container .header-link-dropdown {
+    position: relative;
+    padding: 10px 0px;
+    width: 100%;
+  }
+  header .has-child {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+  }
+  header .has-child > a {
+    order: 1;
+    width: calc(100% - 48px);
+  }
+  header .has-child:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: white;
+    border-bottom-width: 0;
+    display: block;
+    order: 2;
+    margin-left: 21.5px;
+    transition: all 0.3s;
+  }
+  header .has-child:hover:before, header .has-child:focus:before {
+    border-top-color: #ffb400;
+  }
+  header .has-child .header-link-dropdown {
+    order: 3;
+    width: 100%;
+  }
+  header .has-child .header-link-dropdown a:not(#logo) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  header > .container a.link-level-1:hover + .header-link-dropdown {
+    display: none;
+  }
+}

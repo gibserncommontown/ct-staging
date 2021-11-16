@@ -1,0 +1,387 @@
+// Initials
+$blue: #023c61;
+$yellow: #ffb400;
+
+$toggleWidth: 54px;
+$toggleWidthMobile: 47px;
+
+//
+//
+// Initial Style
+.aside {
+  // width: 320px;
+  width: 255px;
+  flex: 0 0 auto;
+
+  margin-bottom: 50px;
+
+  @media (min-width: 768px) {
+    margin-right: calc(50px + 0.52083%);
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
+  a {
+    flex: 1 1 auto;
+  }
+
+  .aside-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside-header {
+    font-size: 1.3125rem;
+    color: $blue;
+    font-weight: bold;
+    line-height: 1.143;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid $blue;
+  } // .aside-header
+
+  .aside-link-wrapper {
+    display: flex;
+  } // End .aside-link-wrapper
+
+  .aside-group {
+    width: 100%;
+  }
+
+  .aside-level-1 {
+    flex-wrap: wrap;
+    background-image: url("../images/link-divider.png");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+  }
+
+  .aside-level-1 > a {
+    font-size: 1.125rem;
+    color: $blue;
+    padding: 1rem 1.5rem;
+    display: block;
+    flex: 1 1 auto;
+    transition: all 0.3s;
+  } // .aside-level-1 > a
+
+  .aside-level-2 > a {
+    font-size: 1rem;
+    padding: 1em 1.5rem;
+    padding-left: 3rem;
+    display: block;
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 2px;
+      width: 0.7rem;
+      background: $blue;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 1.55rem;
+      margin-top: -1px;
+    }
+  } // End aside-level-2 > a
+
+  .toggler {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    width: $toggleWidth;
+    transition: all 0.3s;
+    transform: scale(1);
+
+    @media (max-width: 767px) {
+      width: $toggleWidthMobile;
+    }
+
+    & + a {
+      max-width: calc(100% - #{$toggleWidth});
+      @media (max-width: 767px) {
+        max-width: calc(100% - #{$toggleWidthMobile});
+      }
+    }
+
+    span {
+      transition: all 0.3s;
+      width: calc(100% - 2rem);
+      height: 2px;
+      background: $blue;
+      display: block;
+      flex: 0 0 auto;
+      & + span {
+        margin-top: -2px;
+        transform: rotate(90deg);
+      }
+    }
+  } // End .toggler
+}
+
+//
+//
+// Effects
+
+.aside {
+  input:not(:checked) + a.active + .toggler,
+  input:checked ~ .toggler {
+    // transform: scale(0.8);
+    background: $yellow;
+  }
+
+  input:not(:checked) + a.active + .toggler span,
+  input:checked ~ .toggler span {
+    background: white;
+
+    &:first-child {
+      transform: rotate(45deg) translate(-5px, 5px);
+    }
+    &:last-child {
+      transform: rotate(-45deg) translate(5px, 5px);
+      @media (max-width: 990px) {
+        transform: rotate(-45deg) translate(7px, 7px);
+      }
+    }
+  } // End input:checked ~ .toggler span
+
+  .aside-level-1 {
+    & > a.active {
+      background-color: $yellow;
+      color: white;
+      position: relative;
+    }
+
+    & > a.active + .toggler {
+      background-color: $yellow;
+    }
+    & > a.active + .toggler span {
+      background-color: white;
+    }
+
+    @media (min-width: 768px) {
+      &:hover > a {
+        color: $yellow;
+      }
+      &:hover > a.active {
+        color: white;
+      }
+
+      &:hover > .toggler {
+        background-color: $yellow;
+      }
+
+      &:hover > .toggler span {
+        background-color: white;
+      }
+    }
+  } // End .aside-level-1 > a
+
+  @media (min-width: 768px) {
+    .aside-level-2 {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  input:not(:checked) + a.active + .toggler,
+  input:checked ~ .toggler {
+    & + .aside-group-level-2 .aside-level-2 {
+      max-height: 180px;
+      opacity: 1;
+    }
+  }
+
+  .aside-level-2 a.active {
+    color: $yellow;
+    &:before {
+      background: $yellow;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .aside-level-2 a:hover {
+      color: $yellow;
+      &:before {
+        background: $yellow;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .aside .toggler,
+  .aside .aside-header {
+    display: none;
+  }
+
+  .aside a {
+    background: rgba(#023c61, 0.05);
+  }
+
+  .aside-body > div:last-child {
+    background-image: none;
+  }
+}
+
+/*
+@media (max-width: 767px) {
+  .aside-toggler {
+    cursor: pointer;
+
+    box-shadow: 0 0 0 4px #fff, 0 0 0 8px #3481b2;
+    background: linear-gradient(#01619e, #2a7aab, #69a1c0);
+    position: fixed;
+    z-index: 6;
+    width: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(0deg);
+
+    color: white;
+
+    width: 22%;
+    max-width: 100px;
+
+    border-radius: 100px;
+    transition: all 0.45s;
+
+    &:before {
+      content: "";
+      padding-bottom: 100%;
+      display: block;
+    }
+
+    .aside-open-icon {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        display: block;
+        margin: auto;
+        flex: 0 0 auto;
+        margin-top: 3px;
+      }
+
+      span:nth-child(1) {
+        width: 0;
+        height: 0;
+        border: 9px solid transparent;
+        border-bottom-color: white;
+      }
+      span:nth-child(2) {
+        height: 2px;
+        width: 24px;
+        background: white;
+      }
+
+      span:nth-child(3) {
+        height: 2px;
+        width: 30px;
+        background: white;
+      }
+    }
+
+    .aside-close-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-bottom: 4px;
+
+      div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+      }
+
+      span {
+        width: 90%;
+        height: 2px;
+        background: white;
+        display: block;
+      }
+
+      span:nth-child(2) {
+        margin-top: -2px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .aside {
+    position: fixed;
+    z-index: 5;
+    background: rgba(#000, 0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-bottom: 50px;
+
+    transition: all 0.6s;
+    transform: scale(0);
+    border-radius: 200px;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aside-container {
+    padding: 20px;
+    max-height: 100%;
+    overflow: auto;
+    width: calc(100% - 40px);
+    background: white;
+
+    transition: all 0.8s;
+    transform: scale(0);
+    opacity: 0;
+
+    & > * {
+      width: 100%;
+      background: white;
+    }
+  }
+
+  input:checked + .aside {
+    transform: scale(1);
+    border-radius: 0px;
+    opacity: 1;
+    .aside-container {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  input:checked + .aside + .aside-toggler {
+    transform: translate(-50%, 50%) rotate(180deg);
+  }
+}
+*/

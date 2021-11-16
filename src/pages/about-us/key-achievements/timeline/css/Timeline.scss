@@ -1,0 +1,242 @@
+.timeline {
+  .feed-section {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    &:after,
+    &:before {
+      content: "";
+      width: 2px;
+      height: calc(100% - 120px);
+      background: #7f7f7f;
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+  }
+
+  .feed-seperator {
+    width: 27px;
+    height: 100%;
+    display: block;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: #7f7f7f;
+      display: block;
+      margin-top: 60px;
+    }
+  }
+
+  .feed-section .feed-year {
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+    background-image: url("../images/inbetween.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    width: 120px;
+    height: 120px;
+
+    font-size: 30px;
+    font-weight: bold;
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 1em;
+
+    & > span{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100% - 25px);
+      width: calc(100% - 25px);
+
+      border-radius: 100%;
+    }
+
+    &:before {
+      content: "";
+      width: 14px;
+      height: 1px;
+      background: #7f7f7f;
+      display: block;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:after {
+      content: "";
+      height: 11px;
+      width: 11px;
+      background: #fdb415;
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+    }
+  }
+
+  .feed-section:nth-child(odd) > .feed-year > span{
+    background-color: #008fcb;
+    background-image: linear-gradient(#008fcb, #0071b4, #0e4c9a);
+  }
+
+  .feed-section:nth-child(even) > .feed-year > span{
+    background-color: #008fcb;
+    background-image: linear-gradient(#0e4c9a, #0071b4, #008fcb);
+  }
+
+  .feed-section:first-child:before {
+    display: none;
+  }
+  .feed-section:first-child .feed-year {
+    background-image: url("../images/start.png");
+  }
+
+  .feed-section:last-child:after {
+    display: none;
+  }
+
+  .feed-section:last-child .feed-year {
+    background-image: url("../images/end.png");
+  }
+
+  .feed-align-right .feed-year {
+    &:before {
+      right: 0;
+    }
+    &:after {
+      left: 100%;
+    }
+  }
+
+  .feed-align-left .feed-year {
+    &:after,
+    &:before {
+      left: 0;
+    }
+  }
+
+  .feed-align-left {
+    flex-direction: row-reverse;
+  }
+
+  .feed-description {
+    line-height: 1.425;
+    width: calc(50% - 87px);
+    flex: 0 1 auto;
+    background: #eef4f8;
+    padding: 14px 22px;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      padding-left: 1em;
+      display: block;
+      position: relative;
+
+      &::before {
+        content: "";
+        background: #fdb415;
+        position: absolute;
+
+        top: 0.35em;
+        left: 0;
+
+        width: 5px;
+        height: 5px;
+        display: block;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .feed-align-left .feed-description {
+    border-right: 1px solid #7f7f7f;
+  }
+
+  .feed-align-right .feed-description {
+    border-left: 1px solid #7f7f7f;
+  }
+}
+
+// Unstable hack
+.feed-section + .feed-section {
+  margin-top: -0.8em;
+}
+
+// Mobile
+@media (max-width: 767px) {
+  .timeline {
+    .feed-section + .feed-section {
+      margin-top: 1.5em;
+    }
+
+    .feed-section {
+      flex-direction: column;
+
+      &:first-child > .feed-year,
+      &:last-child > .feed-year,
+      & > .feed-year {
+        background-image: none;
+        background: #0b3d61;
+        &:before,
+        &:after {
+          display: none;
+        }
+
+        span{ 
+          position: relative; 
+          background: transparent !important;
+          transform: none;
+          left: 0;
+          top: 0;
+        }
+
+      }
+
+      .feed-seperator,
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      & > * {
+        width: 100%;
+      }
+
+      .feed-year {
+        height: auto;
+        margin-bottom: 0.3em;
+      }
+
+      & > .feed-description {
+        border-right: 0;
+        border-left: 1px solid #7f7f7f;
+      }
+    }
+  }
+}

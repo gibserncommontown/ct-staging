@@ -1,0 +1,95 @@
+.board-members .board-content {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.board-members .board-content .board {
+  cursor: pointer;
+  width: calc(50% - 20px);
+  padding-bottom: 2.25em;
+  margin-bottom: 3.25em;
+  position: relative;
+  line-height: 1.333;
+}
+
+.board-members .board-content .board:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #2d4f64;
+  display: block;
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  transition: width 0.3s;
+}
+
+.board-members .board-content .board-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.board-members .board-content .board-post {
+  font-size: 1rem;
+}
+
+.board-members .board-content input:not(:checked) + label + .board-description {
+  display: none;
+}
+
+.board-members .board-content input:checked + label .board-name {
+  color: #ffb400;
+}
+
+.board-members .board-content input:checked + label:after {
+  width: 0;
+}
+
+.board-members .board-content .board-description {
+  padding: 2em;
+  background: #eef4f8;
+}
+
+.board-members .board-content .board-description .board-title {
+  font-size: 3.25rem;
+  line-height: 0.962;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.board-members .board-content .board-description .board-title:after {
+  content: "";
+  width: 50px;
+  height: 5px;
+  background: #ffb400;
+  display: block;
+  margin-top: 2rem;
+}
+
+.board-members .board-content .board-description > p {
+  line-height: 1.875;
+}
+
+.board-members .board-content .board-description > p:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 767px) {
+  .board-content label:hover .board-name {
+    color: #ffb400;
+  }
+  .board-content label:hover:after {
+    width: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .board-members .board-content .board {
+    width: 100%;
+  }
+}

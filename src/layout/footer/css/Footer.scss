@@ -1,0 +1,172 @@
+footer {
+  padding: 40px 0 0;
+  background-color: #023c61;
+  background-image: linear-gradient(#0365a2, #01619e);
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+
+  .footer-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 1.313;
+
+    .company-logo {
+      padding-bottom: 1.5rem;
+    }
+    .company-description {
+      width: 350px;
+    }
+
+    h6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 0.65em;
+      text-transform: capitalize;
+    }
+
+    .Footer-products a {
+      display: block;
+      width: 100%;
+      padding: 0 0 0.4rem;
+    }
+
+    .icon {
+      position: relative;
+      margin-right: 1rem;
+      flex: 0 0 auto;
+
+      img:nth-child(2) {
+        transition: opacity 0.3s;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    address {
+      &:hover {
+        color: #ffb400;
+      }
+    }
+
+    .address {
+      width: 300px;
+    }
+
+    .address > * {
+      display: flex;
+      align-items: center;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+
+      &:hover .icon > img:nth-child(2) {
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    transition: color 0.3s;
+    @media (min-width: 992px) {
+      &:hover {
+        color: #ffb400;
+      }
+    }
+  }
+
+  .focus {
+    color: #ffb400;
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    margin: -10px;
+
+    a {
+      display: inline-block;
+      margin: 10px;
+
+      .fa-linkedin-square,
+      .fa-facebook-official {
+        font-size: 2rem;
+      }
+      .fa-youtube-play {
+        font-size: 2.35rem;
+      }
+    }
+  }
+
+  .footer-2 {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-dividor {
+    height: 0.9rem;
+    width: 1px;
+    display: block;
+    background: white;
+    margin: 0 0.35rem;
+  }
+}
+
+@media (max-width: 990px) {
+  footer .footer-1 {
+    .company-description {
+      width: 100%;
+      padding-bottom: 1.4rem;
+    }
+  }
+}
+
+@media (max-width: 619px) {
+  footer .footer-1 {
+    & > div {
+      width: calc(50% - 3px);
+      padding-bottom: 1.4rem;
+    }
+  }
+
+  footer .footer-2 {
+    margin-top: 45px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+  .footer-dividor {
+    opacity: 0;
+  }
+}
+
+.scrollToTop {
+  width: 50px;
+  height: 50px;
+  background: rgba(#000, 0.3);
+  border-radius: 100%;
+
+  &:before,
+  &:after {
+    content: "";
+    height: 37%;
+    width: 2px;
+    display: block;
+    background: white;
+    position: absolute;
+    top: 17px;
+    left: calc(50% - 1px);
+
+    transform-origin: top center;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

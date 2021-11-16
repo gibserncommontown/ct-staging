@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .aside-footer {
+    order: -1;
+  }
+  .aside-footer .product-aside-footer {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+}
