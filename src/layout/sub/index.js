@@ -1,8 +1,8 @@
 import React, { Fragment } from "react"
 
-import Seo from "../Seo"
-import Header from "../Header"
-import Footer from "../Footer"
+import Seo from "../seo"
+import Header from "../header"
+import Footer from "../footer"
 import Breadcrumbs from "../breadcrumbs"
 
 import ContentArea from "~components/ContentArea"
