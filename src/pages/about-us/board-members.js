@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 import keygen from "keygenerator"
 
 import aside from "~content/about-us/aside"

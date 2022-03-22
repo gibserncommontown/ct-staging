@@ -2,7 +2,7 @@ import React, { Fragment, createRef, useState } from "react"
 
 import { requestXHR } from "../../library/library"
 
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 import "./css/Contact.min.css"
 
 const crumbs = [{ text: "Contact Us", to: "/contact-us" }]

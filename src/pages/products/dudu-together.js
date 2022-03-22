@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 import aside from "~content/products/aside"
 
 const crumbs = [

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 import feeds from "~content/about-us/key-achievements"
 
 import "~content/about-us/css/Key-achievements.min.css"

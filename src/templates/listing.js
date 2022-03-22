@@ -1,5 +1,5 @@
 import React from "react"
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 import Tabs from "../pages/showcase/components/01-Tabs"
 import TabContent from "../pages/showcase/components/02-Tab-Content"
 import "./css/news.min.css"

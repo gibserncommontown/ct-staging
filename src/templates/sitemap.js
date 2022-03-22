@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 
 const Sitemap = props => {
     const { site_tree = [] } = props.pageContext;

@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import Evolve from "../home/components/05-Evolve"
 import keygen from "keygenerator"
 
-import Sub from "~layout/Sub"
+import Sub from "~layout/sub"
 import { Overwrite } from '~styled'
 import "./css/Career.min.css"
 

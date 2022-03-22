@@ -1,5 +1,5 @@
 import React from "react"
-import Sub from '~layout/Sub'
+import Sub from '~layout/sub'
 import "./css/news.min.css"
 
 const Article = props => {

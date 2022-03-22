@@ -2,7 +2,7 @@ import React from "react"
 import CommonAcademyPage from "./commonacademy"
 
 
-// import Sub from "~layout/Sub"
+// import Sub from "~layout/sub"
 // import Tabs from "./components/01-Tabs"
 // import TabContent from "./components/02-Tab-Content"
 
