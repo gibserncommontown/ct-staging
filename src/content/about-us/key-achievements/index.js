@@ -2,6 +2,16 @@ import React from "react"
 
 export default [
   {
+    year: 2021,
+    description: (
+      <ul>
+        <li>Deployed Qoqolo Pre-school management system for Invictus International Programme</li>
+        <li>Obtained initial Certification for ISO9001:2015 (QMS). Date: 6 August 2021 (Cert No: 701451)</li>
+        <li>Obtained certification for SS620: 2016 (GDPMDS) again. Date: 18 Oct 2021 (Cert No: 768321)</li>
+      </ul>
+    )
+  },
+  {
     year: 2020,
     description: (
       <ul>
@@ -15,18 +25,6 @@ export default [
       </ul>
     )
   }
-  //   , {
-  //     year: 2020,
-  //     description: (
-  //       <ul>
-  //         <li>User experience design for MOE Talents System</li>
-  //         <li>Event websites under Aerospace and Defense Group (ADG): Singapore Airshow, IMDEX Asia, Rotorcraft Asia and Unmanned Systems Asia
-  // </li>
-  //         <li>Qoqolo Pre-school management system for 8 centres from White Lodge Education Group Services Pte Ltd</li>
-  //         <li>Website development for Continuing Education Training (CET) Academy under Ngee Ann Polytechnic</li>
-  //       </ul>
-  //     )
-  //   }
   , {
     year: 2019,
     description: (

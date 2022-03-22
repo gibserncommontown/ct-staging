@@ -134,22 +134,14 @@ const qoqoloContent = [
 
 const swiiitContent = [
   {
-    name: "Raffles Girls School",
+    name: "Raffles Girls' School",
     link: "https://www.rgs.edu.sg/",
     description: "",
     type: "swiiit",
-    cover: require("./images/swiiit/Row 1.1_Raffles Girls .jpg"),
-    hover: require("./images/swiiit/Row 1.1_Raffles Girls .jpg"),
+    cover: require("./images/swiiit/Raffles Girls School.png"),
+    hover: require("./images/swiiit/Raffles Girls School.png"),
   },
-  {
-    name: "Yishun Town Secondary School",
-    link: "https://yishuntownsec.moe.edu.sg/",
-    description: "",
-    type: "swiiit",
-    cover: require("./images/swiiit/Row 1.2_Yishun Town.jpg"),
-    hover: require("./images/swiiit/Row 1.2_Yishun Town.jpg"),
-  },
-
+  
   {
     name: "Pei Hwa Presbyterian Primary School",
     link: "https://peihwapresbyterianpri.moe.edu.sg/",
@@ -157,6 +149,15 @@ const swiiitContent = [
     type: "swiiit",
     cover: require("./images/swiiit/Row 1.3_Pei Hwa.jpg"),
     hover: require("./images/swiiit/Row 1.3_Pei Hwa.jpg"),
+  },
+
+  {
+    name: "Invictus International School",
+    link: "https://www.invictus.school/",
+    description: "",
+    type: "swiiit",
+    cover: require("./images/swiiit/Invictus International School.png"),
+    hover: require("./images/swiiit/Invictus International School.png"),
   },
 
   {
@@ -187,12 +188,12 @@ const swiiitContent = [
   },
 
   {
-    name: "Junyuan Secondary",
-    link: "https://junyuansec.moe.edu.sg/",
+    name: "Tampines Meridian Junior College",
+    link: "https://tmjc.moe.edu.sg/",
     description: "",
     type: "swiiit",
-    cover: require("./images/swiiit/Row 3.1_Junyan Sec.jpg"),
-    hover: require("./images/swiiit/Row 3.1_Junyan Sec.jpg"),
+    cover: require("./images/swiiit/Row 4.2_TMJC.jpg"),
+    hover: require("./images/swiiit/Row 4.2_TMJC.jpg"),
   },
 
   {
@@ -222,23 +223,16 @@ const swiiitContent = [
   //   hover: require("./images/swiiit/Row 4.1_Nanyang JC.jpg"),
   // },
 
-  {
-    name: "Tampines Meridian Junior College",
-    link: "https://tmjc.moe.edu.sg/",
-    description: "",
-    type: "swiiit",
-    cover: require("./images/swiiit/Row 4.2_TMJC.jpg"),
-    hover: require("./images/swiiit/Row 4.2_TMJC.jpg"),
-  },
 
-  {
-    name: "NUS High School of Mathematics and Science",
-    link: "https://www.nushigh.edu.sg/",
-    description: "",
-    type: "swiiit",
-    cover: require("./images/swiiit/Row 4.3_NUS High.jpg"),
-    hover: require("./images/swiiit/Row 4.3_NUS High.jpg"),
-  },
+
+  // {
+  //   name: "NUS High School of Mathematics and Science",
+  //   link: "https://www.nushigh.edu.sg/",
+  //   description: "",
+  //   type: "swiiit",
+  //   cover: require("./images/swiiit/Row 4.3_NUS High.jpg"),
+  //   hover: require("./images/swiiit/Row 4.3_NUS High.jpg"),
+  // },
 
   {
     name: "Singapore Airshow",
@@ -265,6 +259,34 @@ const swiiitContent = [
     type: "swiiit",
     cover: require("./images/swiiit/IMDEX Asia.png"),
     hover: require("./images/swiiit/IMDEX Asia.png"),
+  },
+
+
+  {
+    name: "Singapore Land Authority",
+    link: "https://www.sla.gov.sg/",
+    description: "",
+    type: "swiiit",
+    cover: require("./images/swiiit/Row 5.1_SLA.jpg"),
+    hover: require("./images/swiiit/Row 5.1_SLA.jpg"),
+  },
+
+  {
+    name: "World Cities Summit",
+    link: "https://www.worldcitiessummit.com.sg/",
+    description: "",
+    type: "swiiit",
+    cover: require("./images/swiiit/Row 5.3_WCS.jpg"),
+    hover: require("./images/swiiit/Row 5.3_WCS.jpg"),
+  },
+
+  {
+    name: "Caregiving Welfare Association",
+    link: "https://www.cwa.org.sg/",
+    description: "",
+    type: "swiiit",
+    cover: require("./images/swiiit/Row 5.2_CWA.jpg"),
+    hover: require("./images/swiiit/Row 5.2_CWA.jpg"),
   },
 
 ]

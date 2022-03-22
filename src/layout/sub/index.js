@@ -3,7 +3,7 @@ import React, { Fragment } from "react"
 import Seo from "../Seo"
 import Header from "../Header"
 import Footer from "../Footer"
-import Breadcrumbs from "../Breadcrumbs"
+import Breadcrumbs from "../breadcrumbs"
 
 import ContentArea from "~components/ContentArea"
 import ContentDiv from "~components/ContentDiv"

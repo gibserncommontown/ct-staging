@@ -3,10 +3,11 @@ import { Link } from "gatsby"
 import "./css/Breadcrumbs.min.css"
 
 const BreadcrumbsComponent = props => {
-  const { crumbs = [] } = props
+  const crumbs = [...props.crumbs]
 
   if (crumbs.length === 0)
     return null
+
 
   crumbs.unshift({ text: "Home", to: "/" })
 
