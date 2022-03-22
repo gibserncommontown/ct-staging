@@ -6,8 +6,8 @@ export default [
     description: (
       <ul>
         <li>Deployed Qoqolo Pre-school management system for Invictus International Programme</li>
-        <li>Obtained initial Certification for ISO9001:2015 (QMS). Date: 6 August 2021 (Cert No: 701451)</li>
-        <li>Obtained certification for SS620: 2016 (GDPMDS) again. Date: 18 Oct 2021 (Cert No: 768321)</li>
+        <li>Obtained initial Certification for ISO9001:2015 (QMS). <br/>Date: 6 August 2021 (Cert No: 701451)</li>
+        <li>Obtained certification for SS620: 2016 (GDPMDS) again. <br/>Date: 18 Oct 2021 (Cert No: 768321)</li>
       </ul>
     )
   },
